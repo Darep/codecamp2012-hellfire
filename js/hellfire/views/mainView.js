@@ -3,10 +3,12 @@ define(
         'jquery',
         'backbone',
         'hellfire/views/CreditsView',
+        'hellfire/views/CityDropdownView',
+        'hellfire/views/weatherView',
         'hellfire/utils/calculator',
-        'hellfire/models/weather'
+        'hellfire/service/weather'
     ],
-    function($, Backbone, CreditsView, Calculator, WeatherModel){
+    function($, Backbone, CreditsView, CityDropdownView, WeatherView, Calculator, WeatherModel){
 
         var View = Backbone.View.extend({
             el: 'body',
@@ -16,21 +18,25 @@ define(
             },
 
             initialize: function() {
-                console.log('fuuu');
-                // TODO: initialize model
-
-                // TODO: bind events
-
+                //this.cityDropDownView = new CityDropdownView();
             },
 
             render: function() {
                 console.log('fuuu');
                 console.log(Calculator);
                 console.log(Calculator.calculate(1, 3012));
+                console.log(WeatherModel);
                 console.log("Oulu", WeatherModel.data["Oulu"]);
                 console.log(WeatherModel.getTemperature("Oulu"))
                 console.log(Calculator.isHellFire(101));
 
+                // render cityDropDownView, weatherView and sliderView
+                WeatherView.render();
+                //CityDropdownView.render();
+                //SliderView.render();
+
+                console.log(WeatherModel.getCities());
+                CityDropdownView.render();
             },
 
             test: function () {

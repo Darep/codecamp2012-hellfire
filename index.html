@@ -28,7 +28,9 @@
 </head>
 <body class="no-grid">
 
-<div id="app">
+<div id="app" class="loading">
+    <div class="loader" style="display:none;">Loading...</div>
+
     <div class="top">
         <div id="cities">
             <select>
@@ -37,8 +39,10 @@
         </div>
         <a href="#" id="credits">Credits</a>
     </div>
-    <div id="weather">
-        <!-- render weather here -->
+    <div id="weather" class="weather">
+        <img class="img" src="img/climacons/Cloud-Drizzle.svg" alt="" />
+        <h2 class="city">Tampere</h2>
+        <p class="temperature">30 'C</p>
     </div>
     <div id="slider">
         SLIDER HERE, AFTER WE GET THE JQUERY UI DOWNLOADED :-)

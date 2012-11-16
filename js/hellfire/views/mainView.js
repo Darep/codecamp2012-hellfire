@@ -4,9 +4,10 @@ define(
         'backbone',
         'hellfire/views/CreditsView',
         'hellfire/utils/calculator',
-        'hellfire/models/weather'
+        'hellfire/models/weather',
+        'hellfire/views/weatherView'
     ],
-    function($, Backbone, CreditsView, Calculator, WeatherModel){
+    function($, Backbone, CreditsView, Calculator, WeatherModel, WeatherView){
 
         var View = Backbone.View.extend({
             el: 'body',
@@ -16,11 +17,7 @@ define(
             },
 
             initialize: function() {
-                console.log('fuuu');
-                // TODO: initialize model
-
-                // TODO: bind events
-
+                //this.cityDropDownView = new CityDropdownView();
             },
 
             render: function() {
@@ -28,7 +25,13 @@ define(
                 console.log(Calculator);
                 console.log(Calculator.calculate(1, 3012));
                 console.log("Oulu", WeatherModel.data["Oulu"]);
-                console.log(WeatherModel.getTemperature("Oulu"))
+                console.log(WeatherModel.getTemperature("Oulu"));
+
+
+                // render cityDropDownView, weatherView and sliderView
+                WeatherView.render();
+                //CityDropdownView.render();
+                //SliderView.render();
             },
 
             test: function () {

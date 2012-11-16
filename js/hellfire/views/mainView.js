@@ -27,8 +27,10 @@ define(
                 console.log('fuuu');
                 console.log(Calculator);
                 console.log(Calculator.calculate(1, 3012));
+                console.log(WeatherModel);
                 console.log("Oulu", WeatherModel.data["Oulu"]);
-                console.log(WeatherModel.getTemperature("Oulu"))
+                console.log(WeatherModel.getTemperature("Oulu"));
+                console.log(WeatherModel.getCities());
             },
 
             test: function () {

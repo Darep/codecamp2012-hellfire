@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'hellfire/service/weather'], 
+define(['jquery', 'backbone', 'hellfire/service/weather'],
 function($, Backbone, WeatherService){
 
     var Model = Backbone.Model.extend({

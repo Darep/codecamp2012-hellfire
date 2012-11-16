@@ -13,7 +13,7 @@ define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone,
             var city = this.model.get("cityLabel");
             var weather = this.model.get("weather");
             $(this.el).find(".city").text(city);
-            $(this.el).find(".temperature").text(temperature); 
+            $(this.el).find(".temperature").text(temperature);
         }
     });
     return new View();

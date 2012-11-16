@@ -6,7 +6,7 @@ define(
         'hellfire/views/CityDropdownView',
         'hellfire/views/weatherView',
         'hellfire/utils/calculator',
-        'hellfire/models/weather'
+        'hellfire/service/weather'
     ],
     function($, Backbone, CreditsView, CityDropdownView, WeatherView, Calculator, WeatherModel){
 

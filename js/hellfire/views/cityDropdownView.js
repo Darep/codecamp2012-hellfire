@@ -2,12 +2,10 @@ define(
     [
         'jquery',
         'backbone',
-        'hellfire/models/weather',
-        'hellfire/models/CityDropdownl',
-        'hellfire/utils/calculator'
-    ],
-    function($, Backbone, WeatherModel, CityDropdownModel, Calculator){
-
+        'hellfire/service/weather',
+        'hellfire/models/CityDropdown',
+        'hellfire/utils/calculator'],
+    function($, Backbone, WeatherService, CityDropdownModel, Calculator){
         var View = Backbone.View.extend({
             el: '#cities',
 
@@ -24,7 +22,7 @@ define(
             render: function() {
                 console.log('cities rend');
                 var select = $(this.el).children('select');
-                $.each(WeatherModel.getCities(),
+                $.each(WeatherService.getCities(),
 	                function (index, val) {
 	                	var option = $("<option>").attr({"value": val.id}).text(val.name);
 	                	select.append(option);
@@ -34,7 +32,7 @@ define(
             citiesChange: function(data) {
                 var selected = $(this.el).find("select").val();
 
-                var initialTemperature = WeatherModel.getTemperature(selected);
+                var initialTemperature = WeatherService.getTemperature(selected);
                 console.log(selected, initialTemperature, Calculator.calculate(initialTemperature, 3012));
             }
 

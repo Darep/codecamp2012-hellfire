@@ -29,6 +29,8 @@ define(
                 console.log(Calculator.calculate(1, 3012));
                 console.log("Oulu", WeatherModel.data["Oulu"]);
                 console.log(WeatherModel.getTemperature("Oulu"))
+                console.log(Calculator.isHellFire(101));
+
             },
 
             test: function () {

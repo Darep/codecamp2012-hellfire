@@ -16,12 +16,15 @@ function($, Backbone, WeatherService, Calculator){
             this.on("change:calculationYear", this.refreshData, this);
         },
 
-        refreshData: function () {
+        refreshData: function (model) {
+            console.log(model);
             var city = this.get("city");
             var calcYear = this.get("calculationYear");
-            this.set("weather", WeatherService.getWeather(city));
+            console.log(calcYear);
             var temperature = WeatherService.getTemperature(city);
-            this.set("temperature", Calculator.calculate(temperature, calcYear)+"' C");
+
+            this.set("weather", WeatherService.getWeather(city));
+            this.set("temperature", Calculator.calculate(temperature, calcYear) + "' C");
             this.set("cityLabel", WeatherService.getCityByKey(city).name);
         }
     });

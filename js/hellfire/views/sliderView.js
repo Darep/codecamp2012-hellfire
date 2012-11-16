@@ -1,5 +1,7 @@
 define(['jquery', 'jquery_ui', 'backbone', 'hellfire/models/slider'], function ($, jQueryUI, Backbone, SliderModel) {
 
+    var DEFAULT_VALUE = 2012;
+
     var View = Backbone.View.extend({
         el: '#slider',
 
@@ -9,13 +11,12 @@ define(['jquery', 'jquery_ui', 'backbone', 'hellfire/models/slider'], function (
             var self = this;
             $(this.el).slider({
                 orientation: 'horizontal',
-                value: 2012,
+                value: DEFAULT_VALUE,
                 max: 4012,
                 min: 2012,
                 step: 100,
                 slide: function (event, ui) {
-                    self.model.set({year: ui.value});
-                    console.log(ui.value);
+                    self.model.set({ year: ui.value });
                 },
                 stop: function (event, ui) {
                     //self.model.set({year: ui.value});
@@ -25,6 +26,7 @@ define(['jquery', 'jquery_ui', 'backbone', 'hellfire/models/slider'], function (
 
         render: function () {
             // do nothing.
+            this.model.set({ year: DEFAULT_VALUE });
         }
     });
 

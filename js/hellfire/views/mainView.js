@@ -14,27 +14,28 @@ define(
             el: 'body',
 
             events: {
-                'click #test': 'test'
+                'click #credits': 'test'
             },
 
             initialize: function() {
                 CityDropdownView.model.on("change", this.handleCityChange);
+                SliderView.model.on("change:year", this.handleSliderChange);
             },
 
-            handleCityChange: function() {
-                var id = CityDropdownView.model.get("id");
+            handleCityChange: function(model) {
+                var id = model.get("id");
                 WeatherView.model.set({city: id});
             },
 
+            handleSliderChange: function (model) {
+                var year = model.get("year");
+                WeatherView.model.set({ calculationYear: parseInt(year, 10) });
+            },
+
             render: function() {
-                console.log('fuuu');
-
                 // render cityDropDownView, weatherView and sliderView
+                console.log('render main');
                 WeatherView.render();
-                //CityDropdownView.render();
-                //SliderView.render();
-
-
                 CityDropdownView.render();
                 SliderView.render();
             },

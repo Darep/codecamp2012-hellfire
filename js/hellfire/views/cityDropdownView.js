@@ -3,9 +3,10 @@ define(
         'jquery',
         'backbone',
         'hellfire/models/weather',
+        'hellfire/models/CityDropdownl',
         'hellfire/utils/calculator'
     ],
-    function($, Backbone, WeatherModel, Calculator){
+    function($, Backbone, WeatherModel, CityDropdownModel, Calculator){
 
         var View = Backbone.View.extend({
             el: '#cities',
@@ -16,9 +17,8 @@ define(
 
             initialize: function() {
                 console.log('cities init');
-                // TODO: initialize model
-
-                // TODO: bind events
+                this.model = CityDropdownModel;
+                this.model.on('change', this.render, this);
             },
 
             render: function() {

@@ -2,7 +2,7 @@ define(
   	[],
     function(){
 
-    	var startYear = 2012;
+    	var startYear = new Date().getFullYear();
     	var climateChangeRate = 0.03;
 
     	var calculator = {

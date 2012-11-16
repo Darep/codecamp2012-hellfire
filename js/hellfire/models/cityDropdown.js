@@ -8,7 +8,8 @@ define(['jquery', 'backbone'], function($, Backbone){
         },
 
         initialize: function () {
-            
+            this.set({ id: this.defaults.id });
+            this.set({ name: this.defaults.name });
         }
     });
 

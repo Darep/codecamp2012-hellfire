@@ -14,30 +14,23 @@ define(
             },
 
             initialize: function() {
-                console.log('cities init');
                 this.model = CityDropdownModel;
-                //this.model.on('change', this.render, this);
             },
 
             render: function() {
-                console.log('cities rend');
                 var select = $(this.el).children('select');
                 $.each(WeatherService.getCities(),
-	                function (index, val) {
-	                	var option = $("<option>").attr({"value": val.id}).text(val.name);
-	                	select.append(option);
-	                });
+                    function (index, val) {
+                        var option = $("<option>").attr({"value": val.id}).text(val.name);
+                        select.append(option);
+                    });
             },
 
             citiesChange: function(data) {
                 var selected = $(this.el).find("select").val();
                 var cityObj = WeatherService.getCityByKey(selected);
-                
-                this.model.set(cityObj);
-                console.log("Model.set", this.model.get("id"));
 
-                var initialTemperature = WeatherService.getTemperature(selected);
-                console.log(selected, initialTemperature, Calculator.calculate(initialTemperature, 3012));
+                this.model.set(cityObj);
             }
 
         });

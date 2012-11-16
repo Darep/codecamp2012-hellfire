@@ -4,28 +4,30 @@ function($, Backbone, WeatherService, Calculator){
     var Model = Backbone.Model.extend({
 
         defaults: {
-            weather: 'sunny',
             city: 'Tampere',
-            cityLabel: 'Tampere',
-            calculationYear: 3012,
-            temperature: "23 'C"
+            //calculationYear: 2012
         },
 
         initialize: function () {
-            this.on("change:city", this.refreshData, this);
-            this.on("change:calculationYear", this.refreshData, this);
+
         },
 
-        refreshData: function (model) {
-            console.log(model);
-            var city = this.get("city");
-            var calcYear = this.get("calculationYear");
-            console.log(calcYear);
+        weather: function () {
+            var city = this.get('city');
+            return WeatherService.getWeather(city);
+        },
+
+        cityLabel: function () {
+            var city = this.get('city');
+            return WeatherService.getCityByKey(city).name;
+        },
+
+        temperature: function () {
+            var city = this.get('city');
+            var calculationYear = this.get('calculationYear');
             var temperature = WeatherService.getTemperature(city);
 
-            this.set("weather", WeatherService.getWeather(city));
-            this.set("temperature", Calculator.calculate(temperature, calcYear) + "' C");
-            this.set("cityLabel", WeatherService.getCityByKey(city).name);
+            return Calculator.calculate(temperature, calculationYear) + " 'C";
         }
     });
 

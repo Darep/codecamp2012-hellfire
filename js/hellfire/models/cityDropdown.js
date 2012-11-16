@@ -3,8 +3,8 @@ define(['jquery', 'backbone'], function($, Backbone){
     var Model = Backbone.Model.extend({
 
         defaults: {
-            id: "Turku",
-            name: "Turku"
+            id: "Helsinki",
+            name: "Helsinki"
         },
 
         initialize: function () {

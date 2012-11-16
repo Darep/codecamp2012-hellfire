@@ -4,7 +4,7 @@ function($, Backbone, WeatherService, Calculator){
     var Model = Backbone.Model.extend({
 
         defaults: {
-            city: 'Tampere',
+            city: 'Helsinki',
             //calculationYear: 2012
         },
 

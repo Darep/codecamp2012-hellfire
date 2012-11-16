@@ -1,14 +1,14 @@
 require.config({
     shim: {
-        'lib/soundmanager2': [],
-        'lib/slickgrid/slick.grid': ['lib/slickgrid/jquery.event.drag-2.0.min', 'lib/slickgrid/slick.core', 'lib/slickgrid/slick.dataview', 'lib/slickgrid/plugins/slick.rowselectionmodel'],
-        'beatstream/audio-modules/soundmanager2': ['lib/soundmanager2']
+        backbone: {
+            'deps': ['jquery', 'underscore'],
+            'exports': 'Backbone'
+        }
     },
 
     paths: {
-        //'lib/soundmanager2': 'lib/soundmanager2-nodebug-jsmin'
-        'lib/store': 'lib/store.min',
-        'lib/jquery-ui': 'lib/jquery-ui-1.8.17.custom.min'
+        'underscore': 'lib/underscore-min',
+        'backbone': 'lib/backbone-min'
     },
 
     urlArgs: "timestamp=" + new Date().getTime(),
@@ -19,8 +19,8 @@ require.config({
 });
 
 require(
-    [],
-    function () {
-        console.log('asdf');
+    ['hellfire/routers/home', 'jquery'],
+    function (router, $) {
+        this.router = new router();
     }
 );

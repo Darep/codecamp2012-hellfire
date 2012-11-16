@@ -20,11 +20,10 @@ define(
                 console.log('cities rend');
                 var select = $(this.el).children('select');
                 $.each(WeatherModel.getCities(),
-                function (index, val) {
-                	var option = $("<option>").attr({"name": val.id}).text(val.name);
-                	select.append(option);
-                });
-                console.log(select.html());
+	                function (index, val) {
+	                	var option = $("<option>").attr({"name": val.id}).text(val.name);
+	                	select.append(option);
+	                });
             }
         });
 

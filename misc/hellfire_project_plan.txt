@@ -1,4 +1,4 @@
-Versio 1 (beta) - Deadline klo 15:30
+Versio 1 (beta) - Deadline klo 15:30 - RELEASED 15:47
 
 + Staattinen lista kaupunkeja
 ++ Helsinki, Tampere, Turku, Jyväskylä, Oulu, Rovaniemi, Talvivaara

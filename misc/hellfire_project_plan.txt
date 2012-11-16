@@ -24,7 +24,7 @@ Versio 3 (Release 2.0)
 Teknologia-stack
 
 - HTML5
-- Backbone.js
-- Require.js
-- Marionette.js
+- backbone.js
+- backbone.marionette.js
+- require.js
 - AJK's Template

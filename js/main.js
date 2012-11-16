@@ -3,10 +3,15 @@ require.config({
         backbone: {
             'deps': ['jquery', 'underscore'],
             'exports': 'Backbone'
+        },
+        jquery_ui: {
+            'deps': ['jquery'],
+            'exports': 'Backbone'
         }
     },
 
     paths: {
+        'jquery_ui': 'lib/jquery-ui-1.9.1.custom.min',
         'underscore': 'lib/underscore-min',
         'backbone': 'lib/backbone-min'
     },

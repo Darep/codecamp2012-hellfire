@@ -2,12 +2,13 @@ define(
     [
         'jquery',
         'backbone',
-        'hellfire/views/CreditsView',
-        'hellfire/views/CityDropdownView',
+        'hellfire/views/creditsView',
+        'hellfire/views/cityDropdownView',
         'hellfire/views/weatherView',
+        'hellfire/views/sliderView',
         'hellfire/utils/calculator'
     ],
-    function($, Backbone, CreditsView, CityDropdownView, WeatherView, Calculator){
+    function($, Backbone, CreditsView, CityDropdownView, WeatherView, SliderView, Calculator){
 
         var View = Backbone.View.extend({
             el: 'body',
@@ -33,8 +34,9 @@ define(
                 //CityDropdownView.render();
                 //SliderView.render();
 
-                
+
                 CityDropdownView.render();
+                SliderView.render();
             },
 
             test: function () {

@@ -8,18 +8,3 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-/* Sam's Grid System: http://samsoff.es/posts/my-grid-system */
-/* Implemented using Frameless. */
-.wrapper, .row {
-    overflow: hidden;
-    margin:0 auto;
-    max-width: $cols10;
-}
-.row > div {
-    float:right;
-    width: $cols5;
-}
-.row > div:first-child {
-    float:left;
-}
-

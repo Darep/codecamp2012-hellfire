@@ -37,22 +37,31 @@ define(
                 this.weatherView.render();
 
                 // render slider
+                var yearElem = $('<p class="year"></p>');
                 var self = this;
                 $('#slider').slider({
                     orientation: 'horizontal',
                     value: DEFAULT_YEAR,
                     max: 4012,
                     min: 2012,
-                    step: 100,
+                    step: 50,
                     slide: function (event, ui) {
                         self.weatherView.model.set({ calculationYear: parseInt(ui.value, 10) });
+                        var left = $(ui.handle).css('left');
+                        yearElem.text('Vuosi ' + ui.value);
+                        yearElem.css('left', left);
                     },
                     stop: function (event, ui) {
-                        //self.model.set({year: ui.value});
+                        var left = $(ui.handle).css('left');
+                        yearElem.text('Vuosi ' + ui.value);
+                        yearElem.css('left', left);
                     }
                 });
-                this.weatherView.model.set({ calculationYear: parseInt(DEFAULT_YEAR, 10) });
 
+                this.weatherView.model.set({ calculationYear: parseInt(DEFAULT_YEAR, 10) });
+                yearElem.text('Vuosi ' + DEFAULT_YEAR);
+
+                $('#slider').append(yearElem);
             },
 
             test: function () {

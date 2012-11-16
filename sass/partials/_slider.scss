@@ -1,0 +1,24 @@
+#app {
+    .ui-slider {
+        background:#484122;
+        border-color:#38321b;
+        height:6px;
+        margin:$baseline*2 auto 0;
+        padding:0;
+        width:75%;
+    }
+
+    .ui-slider-handle {
+        background:#6b6133;
+        border-color:#38321b;
+        cursor:pointer;
+        top:-8px;
+        width:12px;
+    }
+}
+
+.year {
+    margin:20px 0 0 -45px;
+    position:absolute;
+    text-align: center;
+}

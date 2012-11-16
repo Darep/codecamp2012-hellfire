@@ -1,5 +1,16 @@
-
-header {
-    padding-top:$baseline;
+.top {
     @include clearfix;
+}
+
+#cities {
+    float:left;
+
+    select {
+        font-size:24px;
+        -webkit-appearance: none;
+    }
+}
+
+#credits-btn {
+    float:right;
 }

@@ -8,3 +8,12 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
+
+html, body, #app {
+    height:100%;
+}
+
+#app {
+    background:#e4cd6b;
+    padding:20px;
+}

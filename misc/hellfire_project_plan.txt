@@ -1,4 +1,4 @@
-Versio 1 (beta)
+Versio 1 (beta) - Deadline klo 15:30
 
 - Staattinen lista kaupunkeja
 -- Helsinki, Tampere, Turku, Jyväskylä, Oulu, Rovaniemi, Talvivaara
@@ -8,7 +8,7 @@ Versio 1 (beta)
 -- Kiihtyykö myöhemmässä vaiheessa?
 
 
-Versio 2 (RC1/Release 1.0)
+Versio 2 (RC1/Release 1.0) - deadline klo 17:00
 
 - Aikapisteen valinta -slider
 - Säätila (aurinkoinen/pilvinen/sateinen)

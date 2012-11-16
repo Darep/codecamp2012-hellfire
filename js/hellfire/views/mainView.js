@@ -20,20 +20,23 @@ define(
             },
 
             initialize: function() {
-                CityDropdownView.model.on("change", this.handleCityChange);
+                this.cityDropdownView = new CityDropdownView();
+                this.cityDropdownView.model.on("change", this.handleCityChange, this);
+
+                this.weatherView = new WeatherView();
             },
 
             handleCityChange: function(model) {
                 var id = model.get("id");
-                WeatherView.model.set({ city: id });
+                this.weatherView.model.set({ city: id });
             },
 
             render: function() {
                 // render cityDropDownView, weatherView and sliderView
-                console.log('render main');
-                WeatherView.render();
-                CityDropdownView.render();
+                this.cityDropdownView.render();
+                this.weatherView.render();
 
+                // render slider
                 var self = this;
                 $('#slider').slider({
                     orientation: 'horizontal',
@@ -42,13 +45,13 @@ define(
                     min: 2012,
                     step: 100,
                     slide: function (event, ui) {
-                        WeatherView.model.set({ calculationYear: parseInt(ui.value, 10) });
+                        self.weatherView.model.set({ calculationYear: parseInt(ui.value, 10) });
                     },
                     stop: function (event, ui) {
                         //self.model.set({year: ui.value});
                     }
                 });
-                WeatherView.model.set({ calculationYear: parseInt(DEFAULT_YEAR, 10) });
+                this.weatherView.model.set({ calculationYear: parseInt(DEFAULT_YEAR, 10) });
 
             },
 

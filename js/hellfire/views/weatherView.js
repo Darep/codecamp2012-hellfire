@@ -18,5 +18,5 @@ define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone,
             $(this.el).find(".temperature").text(temperature);
         }
     });
-    return new View();
+    return View;
 });

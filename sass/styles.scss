@@ -22,9 +22,6 @@ $font-heading: 'Open Sans Condensed', 'Arial Narrow', sans-serif;
 
 $baseline: 24px;
 
-// Baseline grid. Remove in production!
-@import "partials/_basehold-it";
-
 
 // Mixins
 @mixin image-replacement {

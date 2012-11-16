@@ -1,0 +1,136 @@
+/*!
+ * ajk's Hot New Template
+ * Made by ajk (ajk.fi)
+ */
+
+@import "compass/css3";
+
+// Frameless grid. Remove if don't need
+@import "partials/_frameless";
+
+
+// Style wide settings
+$color-text: #333;
+$color-light: #888;
+$color-heading: #101010;
+$color-link: #17c;
+$color-link-hover: #a53;
+$link-border: 1px solid #ced2df;
+
+$font-body: 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-heading: 'Open Sans Condensed', 'Arial Narrow', sans-serif;
+
+$baseline: 24px;
+
+// Baseline grid. Remove in production!
+@import "partials/_basehold-it";
+
+
+// Mixins
+@mixin image-replacement {
+    text-indent:100%;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+@mixin clearfix {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin disable-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/* RESET
+----------------------------------------------------------------------------- */
+@import "partials/_reset";
+
+
+/*------------------------------------*\
+    ELEMENTS
+\*------------------------------------*/
+
+
+/* BASE
+----------------------------------------------------------------------------- */
+@import "partials/_base";
+
+
+/* TYPOGRAPHY
+----------------------------------------------------------------------------- */
+@import "partials/_typography";
+
+
+/* ABSTRACTIONS (OOCSS style)
+----------------------------------------------------------------------------- */
+@import "partials/_abstractions";
+
+
+/*------------------------------------*\
+    OBJECTS
+\*------------------------------------*/
+
+
+/* ICONS & ANIMATIONS
+----------------------------------------------------------------------------- */
+@import "partials/_icons";
+@import "partials/_animations";
+
+
+/* BUTTONS
+----------------------------------------------------------------------------- */
+@import "partials/_buttons";
+
+
+/* FORMS
+----------------------------------------------------------------------------- */
+@import "partials/_forms";
+
+
+/* TABLES
+----------------------------------------------------------------------------- */
+@import "partials/_tables";
+
+
+/* NAV
+----------------------------------------------------------------------------- */
+@import "partials/_nav";
+
+
+/*------------------------------------*\
+    COMPONENTS
+\*------------------------------------*/
+
+
+/* HEADER
+----------------------------------------------------------------------------- */
+@import "partials/_header";
+
+
+/* FOOTER
+----------------------------------------------------------------------------- */
+@import "partials/_footer";
+
+
+/*------------------------------------*\
+    OTHER
+\*------------------------------------*/
+
+
+/* ALL THE REST
+----------------------------------------------------------------------------- */
+@import "partials/_other";

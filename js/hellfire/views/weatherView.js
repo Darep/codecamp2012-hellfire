@@ -13,9 +13,11 @@ define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone,
 
             var temperature = this.model.temperature();
             var city = this.model.cityLabel();
+            var year = this.model.get("calculationYear");
 
             $(this.el).find(".city").text(city);
             $(this.el).find(".temperature").text(temperature);
+            $(this.el).find(".year").text(year);
         }
     });
     return View;

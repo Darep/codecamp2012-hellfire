@@ -2,9 +2,10 @@ define(
     [
         'jquery',
         'backbone',
-        'hellfire/models/weather'
+        'hellfire/models/weather',
+        'hellfire/utils/calculator'
     ],
-    function($, Backbone, WeatherModel){
+    function($, Backbone, WeatherModel, Calculator){
 
         var View = Backbone.View.extend({
             el: '#cities',
@@ -32,7 +33,9 @@ define(
 
             citiesChange: function(data) {
                 var selected = $(this.el).find("select").val();
-                console.log(selected);
+
+                var initialTemperature = WeatherModel.getTemperature(selected);
+                console.log(selected, initialTemperature, Calculator.calculate(initialTemperature, 3012));
             }
 
         });

@@ -9,6 +9,10 @@ define(
         var View = Backbone.View.extend({
             el: '#cities',
 
+            events: {
+                'change select': 'citiesChange'
+            },
+
             initialize: function() {
                 console.log('cities init');
                 // TODO: initialize model
@@ -21,10 +25,16 @@ define(
                 var select = $(this.el).children('select');
                 $.each(WeatherModel.getCities(),
 	                function (index, val) {
-	                	var option = $("<option>").attr({"name": val.id}).text(val.name);
+	                	var option = $("<option>").attr({"value": val.id}).text(val.name);
 	                	select.append(option);
 	                });
+            },
+
+            citiesChange: function(data) {
+                var selected = $(this.el).find("select").val();
+                console.log(selected);
             }
+
         });
 
         return new View();

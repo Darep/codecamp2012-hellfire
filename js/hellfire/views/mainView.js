@@ -3,10 +3,11 @@ define(
         'jquery',
         'backbone',
         'hellfire/views/CreditsView',
+        'hellfire/views/CityDropdownView',
         'hellfire/utils/calculator',
         'hellfire/models/weather'
     ],
-    function($, Backbone, CreditsView, Calculator, WeatherModel){
+    function($, Backbone, CreditsView, CityDropdownView, Calculator, WeatherModel){
 
         var View = Backbone.View.extend({
             el: 'body',
@@ -31,6 +32,7 @@ define(
                 console.log("Oulu", WeatherModel.data["Oulu"]);
                 console.log(WeatherModel.getTemperature("Oulu"));
                 console.log(WeatherModel.getCities());
+                CityDropdownView.render();
             },
 
             test: function () {

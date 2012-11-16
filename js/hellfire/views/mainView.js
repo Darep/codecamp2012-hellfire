@@ -11,6 +11,7 @@ define(
     function($, jquery_ui, Backbone, CreditsView, CityDropdownView, WeatherView, Calculator){
 
         var DEFAULT_YEAR = 2012;
+        var DEFAULT_DATE = '16.11.';
 
         var View = Backbone.View.extend({
             el: 'body',
@@ -48,18 +49,18 @@ define(
                     slide: function (event, ui) {
                         self.weatherView.model.set({ calculationYear: parseInt(ui.value, 10) });
                         var left = $(ui.handle).css('left');
-                        yearElem.text('Vuosi ' + ui.value);
+                        yearElem.text(DEFAULT_DATE + ui.value);
                         yearElem.css('left', left);
                     },
                     stop: function (event, ui) {
                         var left = $(ui.handle).css('left');
-                        yearElem.text('Vuosi ' + ui.value);
+                        yearElem.text(DEFAULT_DATE + ui.value);
                         yearElem.css('left', left);
                     }
                 });
 
                 this.weatherView.model.set({ calculationYear: parseInt(DEFAULT_YEAR, 10) });
-                yearElem.text('Vuosi ' + DEFAULT_YEAR);
+                yearElem.text(DEFAULT_DATE + DEFAULT_YEAR);
 
                 $('#slider').append(yearElem);
             },

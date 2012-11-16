@@ -2,13 +2,12 @@ define(
     [
         'jquery',
         'backbone',
-        'hellfire/views/CreditsView'
+        'hellfire/views/CreditsView',
+        'hellfire/utils/calculator'
     ],
-    function($, Backbone, CreditsView){
-
+    function($, Backbone, CreditsView, Calculator){
         var View = Backbone.View.extend({
             el: 'body',
-
             events: {
                 'click #test': 'test'
             },
@@ -23,6 +22,8 @@ define(
 
             render: function() {
                 console.log('fuuu');
+                console.log(Calculator);
+                console.log(Calculator.calculate(1, 3012));
                 // TODO: render view
             },
 

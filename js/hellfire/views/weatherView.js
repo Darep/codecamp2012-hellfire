@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'hellfire/models/gaymodel'], function ($, Backbone, WeatherModel) {
+define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone, WeatherModel) {
 
     var View = Backbone.View.extend({
         el: '#weather',

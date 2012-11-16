@@ -1,0 +1,15 @@
+define(['jquery', 'backbone'], function($, Backbone) {
+	var WeatherModel = Backbone.Model.extend({
+		data: [
+                     	{"city": "Tampere", "temperature": 2.5, "windSpeed": 1.1 },
+	                   	{"city": "Rovaniemi", "temperature": -0.7, "windSpeed": 2.4 },
+	                   	{"city": "Oulu", "temperature": -0.1, "windSpeed": 2.2 },
+	                   	{"city": "Jyväskylä", "temperature": 2.9, "windSpeed": 2.1 },
+	                   	{"city": "Turku", "temperature":  4.9, "windSpeed": 1.6 }],
+    	initialize: function() {
+    	  
+    	}
+    });
+    
+    return new WeatherModel();
+});

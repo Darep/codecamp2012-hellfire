@@ -3,11 +3,14 @@ define(
         'jquery',
         'backbone',
         'hellfire/views/CreditsView',
-        'hellfire/utils/calculator'
+        'hellfire/utils/calculator',
+        'hellfire/models/weather'
     ],
-    function($, Backbone, CreditsView, Calculator){
+    function($, Backbone, CreditsView, Calculator, WeatherModel){
+
         var View = Backbone.View.extend({
             el: 'body',
+
             events: {
                 'click #test': 'test'
             },
@@ -24,7 +27,7 @@ define(
                 console.log('fuuu');
                 console.log(Calculator);
                 console.log(Calculator.calculate(1, 3012));
-                // TODO: render view
+                console.log("Oulu", WeatherModel.data[2]);
             },
 
             test: function () {

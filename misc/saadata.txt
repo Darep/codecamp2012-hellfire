@@ -1,0 +1,6 @@
+Asema:4017 Tampere Ilma:2.5 Tuuli avg:1.1
+Asema:14002 Rovaniemi Ilma:-0.7 Tuuli avg:2.4
+Asema:12001 Oulu Ilma:-0.1 Tuuli avg:2.4
+Asema:9014 Jyväskylä Ilma:2 Tuuli avg:2.2
+Asema:2030 Turku Ilma:4.9 Tuuli avg:2.1
+Asema:1002 Helsinki Ilma:7 Tuuli avg:1.6

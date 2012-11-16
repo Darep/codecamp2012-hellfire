@@ -57,6 +57,10 @@ define(['jquery', 'backbone'], function($, Backbone) {
     			cities.push({id: key, name: this.data[key].city});
     		}
     		return cities;
+    	},
+
+    	getCityByKey: function(key) {
+    		return {id: key, name: this.data[key].city};
     	}
     });
     

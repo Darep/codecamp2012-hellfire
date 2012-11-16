@@ -16,7 +16,7 @@ define(
             initialize: function() {
                 console.log('cities init');
                 this.model = CityDropdownModel;
-                this.model.on('change', this.render, this);
+                //this.model.on('change', this.render, this);
             },
 
             render: function() {
@@ -31,6 +31,10 @@ define(
 
             citiesChange: function(data) {
                 var selected = $(this.el).find("select").val();
+                var cityObj = WeatherService.getCityByKey(selected);
+                
+                this.model.set(cityObj);
+                console.log("Model.set", this.model.get("id"));
 
                 var initialTemperature = WeatherService.getTemperature(selected);
                 console.log(selected, initialTemperature, Calculator.calculate(initialTemperature, 3012));

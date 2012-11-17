@@ -27,7 +27,7 @@ function($, Backbone, WeatherService, Calculator){
             var calculationYear = this.get('calculationYear');
             var temperature = WeatherService.getTemperature(city);
 
-            return Calculator.calculate(temperature, calculationYear) + " 'C";
+            return Calculator.calculate(temperature, calculationYear) + " °C";
         }
     });
 

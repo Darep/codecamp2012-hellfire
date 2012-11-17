@@ -1,19 +1,8 @@
-define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone, WeatherModel) {
+define(
+    ['jquery', 'backbone', 'hellfire/models/weather'],
+function ($, Backbone, WeatherModel) {
 
     var SUNNY_THRESHOLD = 30;
-
-
-    function getImageName(weather) {
-        switch (weather) {
-            case 'cloudy':
-                return 'Cloud';
-            case 'sunny':
-                return 'Sun';
-            default:
-            case 'rainy':
-                return 'Cloud-Rain';
-        }
-    }
 
 
     var View = Backbone.View.extend({
@@ -42,5 +31,20 @@ define(['jquery', 'backbone', 'hellfire/models/weather'], function ($, Backbone,
             $(this.el).find(".temperature").text(temperature);
         }
     });
+
+
+    function getImageName(weather) {
+        switch (weather) {
+            case 'cloudy':
+                return 'Cloud';
+            case 'sunny':
+                return 'Sun';
+            default:
+            case 'rainy':
+                return 'Cloud-Rain';
+        }
+    }
+
+
     return View;
 });

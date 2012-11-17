@@ -14,11 +14,18 @@
         cursor:pointer;
         top:-8px;
         width:12px;
+
+        &:active, &:focus {
+            opacity:1;
+        }
     }
 }
 
 .year {
+    font-weight:700;
     margin:20px 0 0 -45px;
     position:absolute;
     text-align: center;
+
+    -webkit-transition: all 200ms ease;
 }

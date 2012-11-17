@@ -3,7 +3,7 @@ define(
         'jquery',
         'backbone',
         'hellfire/service/weather',
-        'hellfire/models/CityDropdown',
+        'hellfire/models/cityDropdown',
         'hellfire/utils/calculator'],
     function($, Backbone, WeatherService, CityDropdownModel, Calculator){
         var View = Backbone.View.extend({
